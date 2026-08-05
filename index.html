@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+        <!--СЕО ОПИС - МЕГА ВАЖЛИВО-->
+    <meta name="description"
+    content="Каталог майстрів та будівельників нашого міста. Сантехніки, електрики, будівельники, зварювальники та інші спеціалісти.">
+    
+    <title>Майстри та будівельники Запоріжжя | Каталог спеціалістів</title>
+
+    <!--відсилка до стилів-->
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/png"href="images/favicon.png">
+    <link rel="canonical" href="https://" />
+
+
+</head>
+
+
+
+
+<body>
+
+    <header>
+        <h2>Майстри та будівельники Запоріжжя</h2>
+        <nav>
+                <a href="#home">Головна</a>
+                <a href="#masters">Наші майстри</a>
+                <a href="#delivery-section">Наші перевізники</a>
+                <a href="#partners-section">Наші постачальники</a>
+                <a href="#join-master-section">Контакти</a>
+                <a href="promo/promo.html" class="nav-btn-highlight">Стати майстром</a>
+                
+                
+                <a href="blog/index.html">🔨Наш блог</a>
+                
+        </nav>
+            
+
+    </header>
+
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <h1>
+                 Ми повернемо затишок і комфорт у ваш дім🪚
+            </h1>
+
+            <p>
+                 Нам під силу і поличку прибити, і котедж звести🏠
+            </p>
+
+            <a href="#masters" class="hero-btn">
+                 Підібрати виконавця🚀
+            </a>
+
+            
+
+        </section>    
+        
+
+
+
+
+        <section class="advantages-section">
+
+             <h2 class="advantages-title">
+                Чому нас обирають?
+            </h2>
+
+            <div class="advantages">
+                <div class="adv-card">
+                    <div class="adv-icon">🎯</div>
+
+                    <p>
+                        Максимум інформації на одному ресурсі
+                    </p>
+            </div>   
+                
+                <div class="adv-card">
+                    <div class="adv-icon">🪚</div>
+
+                    <p>
+                        Тільки перевірені майстри
+                    </p>
+                </div>
+
+                <div class="adv-card">
+                    <div class="adv-icon">🚀</div>
+
+                    <p>
+                        Найповніша картотека
+                    </p>
+                </div>
+
+                <div class="adv-card">
+                    <div class="adv-icon">✔️</div>
+
+                    <p>
+                        Швидкий пошук виконавця
+                    </p>
+                </div>   
+            
+            </div>
+        </section>
+
+        <section id="masters" class="masters-section">
+            <h2>Наші спеціалісти</h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔎Пошук спеціаліста..."
+                onkeyup="searchMaster()"
+                />
+
+
+
+
+
+
+            <div class="filters">
+                <button onclick="filterMasters('all')">Всі</button>
+                <button onclick="filterMasters('plumber')">Сантехніки</button>
+                <button onclick="filterMasters('electrician')">Електрики</button>
+                <button onclick="filterMasters('builder')">Будівельники</button>
+                <button onclick="filterMasters('welder')">Зварювальники</button>
+                <button onclick="filterMasters('painter')">Маляри</button>
+                <button onclick="filterMasters('tiler')">Плиточники</button>
+                <button onclick="filterMasters('handyman')">Майстер на годину</button>
+                <button onclick="filterMasters('heating-installer')">Опалення</button>
+                <button onclick="filterMasters('window-installer')">Встановлення вікон</button>
+                <button onclick="filterMasters('door-installer')">Встановлення дверей</button>
+                <button onclick="filterMasters('stretch-ceilings')">Натяжна стеля</button>
+                <button onclick="filterMasters('interior-finisher')">Внутрішнє оздоблення</button>
+                <button onclick="filterMasters('roof-installer')">Монтаж покрівлі</button>
+                <button onclick="filterMasters('exterior-worker')">Фасадні роботи</button>
+                <button onclick="filterMasters('landscaping-services')">Благоустрій території</button>
+                <button onclick="filterMasters('furniture-assembler')">Корпусні меблі</button>
+                <button onclick="filterMasters('conditioner-installer')">Монтаж кондиціонерів</button>
+                <button onclick="filterMasters('cleaning')">Прибирання</button>
+                <button onclick="filterMasters('worker')">ВАНТАЖНИКИ</button>
+                <button onclick="filterMasters('trucker')">ПЕРЕВІЗНИКИ</button>
+
+
+            </div>
+
+
+            <div class="master-grid" id="masterGrid"></div> <!--відсилка до масиву майстрів в ява скрипт-->
+
+
+        
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section id="partners-section" class="partners-section">
+            <h2 class="partners-title">
+                🔥Гарячі пропозиції Запоріжжя
+            </h2>
+
+
+            <!--постачальники будматеріалів у Запоріжжі-->
+            <div class="partners-container">
+                        
+                
+
+                
+            </div>
+        </section>
+
+
+
+        <section id="delivery-section" class="delivery-section">
+            <h2 class="delivery-title">
+                🤝Перевірені перевізники вантажів у місті Запоріжжя
+            </h2>
+
+            <div class="delivery-container">
+                        <!--картку добавлено 14.06.2026-->
+                <div class="delivery-card">
+                    
+
+
+
+                </div>
+
+                
+            </div>
+        </section>
+
+
+
+        
+
+
+
+        
+
+
+        <section class="seo-text">
+            <h2>
+                Каталог майстрів та будівельників Запоріжжя.
+            </h2>
+
+            <p>
+                На нашому сайті ви можете знайти спеціалістів різних напрямків:
+        сантехніків, електриків, будівельників, зварювальників, мулярів, штукатурів, майстрів з монтажу гупсокартонних конструкцій,
+        плиточників та майстрів на годину у Запоріжжі.
+        Ми поступово поповнюємо каталог новими перевіреними спеціалістами.
+            </p>
+           
+            <p>
+                Каталог майстрів та будівельників Запоріжжя — це сучасний сервіс, де майстер, за бажанням, отримує власну вебсторінку з описом послуг, фотографіями виконаних робіт і контактною інформацією. Це допомагає клієнтам зробити більш усвідомлений вибір, а майстрам — знайти нових замовників.
+            </p>    
+        <p>Окрім каталогу майстрів, на сайті зібрані перевізники будматеріалів і перевірені постачальники будматеріалів в Запоріжжі. Це дозволяє в одному місці знайти фахівця для виконання робіт, замовити доставку матеріалів і обрати надійного продавця для покупки всього необхідного для будівництва чи ремонту.</p> 
+
+        </section>
+
+
+
+        <section class="reviews-section">
+            <h2>💬 Відгуки наших містян</h2>
+            <p class="reviews-subtitle">
+                Ми публікуємо лише перевірені відгуки, які надходять від наших реальних користувачів.
+            </p>
+
+            <div class="reviews-container">
+
+                <div class="review-card">
+                    
+                </div>
+
+               
+            </div>
+            <div class="review-action">
+                <a href="https://wa.me/380957996024?text=%D0%94%D0%BE%D0%B1%D1%80%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BB%D0%B8%D1%88%D0%B8%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B3%D1%83%D0%BA."
+                class="leave-review-btn">
+                ✍️ Залишити відгук через WhatsApp
+                </a>
+            </div>
+
+        </section>
+
+
+        <!---інформаційна картка блогу--->
+        <section class="blog-promo-section">
+            <div class="blog-promo-card">
+                <div class="blog-promo-content">
+                    <span class="blog-badge">🗨️ НАШ БЛОГ</span>
+                    <h2>Будівельний блог майстрів Запоріжжя: поради від майстрів🛠️</h2>
+                    <p>
+                        Не знаєте, як правильно вибрати вхідні двері, як проконтролювати ремонт чи який клей підійде для плитки? Читайте чесні огляди, лайхаки від реальних спеціалістів.
+                    </p>
+                    <a href="blog/index.html" class="blog-promo-btn">📖 Читати корисні статті</a>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="join-section" id="join-master-section">
+            <h2>Ви спеціаліст?</h2>
+
+            <p>
+                Якщо ви майстер або будівельник і хочете приєднатися до каталогу майстрів Запоріжжя, зв'яжіться з нами!
+            </p>
+
+            <a href="https://wa.me/380957996024?text=Добрий%20день!%20Хочу%20приєднатися%20до%20каталогу%20майстрів%20Запоріжжя."
+                class="add-master-btn whatsapp-btn">
+                💬 Додати свою анкету через WhatsApp
+            </a>
+
+
+
+            <a href="viber://chat?number=%2B380686479588"
+             class="add-master-btn viber-btn">
+                💬 Додайте свою анкету через Viber
+                
+            </a>
+
+
+
+            <p>
+                І ми безкоштовно додамо вашу анкету до каталогу.
+            </p>
+            <ul class="join-list">
+                <li>👤Ваше ім'я</li>
+                <li>🔨Спеціалізацію (наприклад, сантехнік, електрик, будівельник тощо)</li>
+                <li>📝Короткий опис послуг, які ви надаєте</li>
+                <li>📞Контактний номер телефону</li>
+                <li>🏆Досвід роботи</li>
+            </ul>
+
+            <p class="join-note">
+                ⏱️ Додавання анкети займає лише хвилину.
+            </p>
+        </section>
+
+
+
+        <section class="join-section" id="join-partner-section">
+            <h2>Ви виробник, магазин або офіційний педставник бренду?</h2>
+            <h2>Працюєте в сфері будівельних матеріалів та інструменту?</h2>
+
+            <p>
+                Отримайте окрему сторінку вашої компанії з описом продукції, фотографіями, контактами та прикладами робіт. Допоможіть клієнтам швидше знайти саме вас.
+            </p>
+
+            <a href="https://wa.me/380957996024?text=Добрий%20день!%20В%20мене%20є%20потреба%20в%20осотистій%20вебсторінці."
+                class="add-master-btn whatsapp-btn">
+                💬 Зв'язатися через WhatsApp
+            </a>
+            <h3></h3>
+                ✅Створення сторінки займає 1-3 дні.
+                ✅Консультація безкоштовна.
+            </h3>
+
+        </section>
+
+        
+
+    </main>    
+
+
+    
+    
+    
+
+    
+
+
+
+    <button id="scrollToTopBtn" aria-label="Наверх">
+            ▲
+        </button> <!--кнопка наверх-->
+
+
+
+
+
+
+    <footer id="contacts"> 
+        <h2>Майстри і будівельники нашого міста</h2>
+
+         
+        <p>
+            <a href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer">
+                📘Наш Facebook
+            </a>
+        </p>  
+
+        <p>
+            <a href="mailto:yurij.webdev@gmail.com" title="Написати нам">
+                📧E-mail
+            </a>
+        </p>
+
+            <p>📍Запоріжжя, Україна</p>
+
+            <p>© Майстри і будівельники нашого міста 2026</p>
+
+            <p><small>Правила публікації матеріалів:</small></p>
+            <p></small>Ми поважаємо авторські права та права інших людей. Якщо будь-який матеріал на сайті порушує ваші права, повідомте нас через контакти, і ми оперативно його перевіримо та, за потреби, виправимо або видалимо</small></p>
+
+
+
+    </footer>
+
+        <!--посилання до супербази-->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <!--посилання до ява скрипта-->
+    <script src="script.js"></script> 
+
+
+        
+
+
+</body>
+</html>
