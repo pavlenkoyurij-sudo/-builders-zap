@@ -68,7 +68,15 @@
                             </select>
                             <!---<input type="text" id="masterCategory" placeholder="🪚 Ваша спеціальність">--->
                             <input type="text" id="masterPhone" placeholder="📞 Ваш телефон">
-                            <input type="text" id="masterExperience" placeholder="🏆 Досвід (років)">
+                            <input
+                                type="number"
+                                id="experience"
+                                min="1"
+                                max="50"
+                                placeholder="🏆 Досвід роботи, років:"
+                                required>
+                            
+                            
                             <textarea id="masterDescription" placeholder="📝 Короткий опис послуг"></textarea>
                             <input type="file" id="masterPhoto" accept="image/*">
                             
