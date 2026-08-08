@@ -67,13 +67,20 @@
                                 <option value="trucker">ПЕРЕВІЗНИКИ</option>
                             </select>
                             <!---<input type="text" id="masterCategory" placeholder="🪚 Ваша спеціальність">--->
-                            <input type="text" id="masterPhone" placeholder="📞 Ваш телефон">
+                            <input
+                                type="tel"
+                                id="masterPhone"
+                                placeholder="📞 Ваш телефон:+380000000005"
+                                pattern="\+380[0-9]{9}"
+                                required>
+                            <!--<input type="text" id="masterPhone" placeholder="📞 Ваш телефон">-->
+                            <!--<label>Досвід роботи, років:</label> - ім'я текстового простору-->
                             <input
                                 type="number"
-                                id="experience"
+                                id="masterExperience"
                                 min="1"
                                 max="50"
-                                placeholder="🏆 Досвід роботи, років:"
+                                placeholder="Досвід роботи, років:"
                                 required>
                             
                             
