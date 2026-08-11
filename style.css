@@ -946,6 +946,17 @@ header nav a[href^="mailto:"]:hover {
     }
 
 
+    .hot-banner {
+        width: 100%; /* Можна змінити на бажану ширину */
+        height: auto;
+        
+        border-radius: 8px;
+        margin: 0 auto 20px auto; /* Центруємо банер і додаємо відступ знизу */
+    
+    }
+
+
+
 
 
 
