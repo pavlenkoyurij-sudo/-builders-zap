@@ -182,10 +182,13 @@
             // Знаходимо майстра в масиві за id
             const master = masters.find(m => m.id === id);
             if (!master) return;
-
+        
+            // Отримуємо зрозумілу назву категорії зі словника categoryNames
+            const categoryTitle = categoryNames[master.category] || master.profession || master.category;
+        
             // Заповнюємо дані в модалці
             document.getElementById("modalName").textContent = master.name;
-            document.getElementById("modalProfession").textContent = "🛠️ " + master.profession;
+            document.getElementById("modalProfession").textContent = "🛠️ " + categoryTitle; // 👈 Вже не буде undefined!
             document.getElementById("modalCity").textContent = "📍 " + master.city;
             document.getElementById("modalDescription").textContent = master.description || "Опис відсутній.";
             document.getElementById("modalCallBtn").href = "tel:" + master.phone;
@@ -193,7 +196,7 @@
             const photoEl = document.getElementById("modalPhoto");
             photoEl.src = master.photo || 'images/default.jpeg';
             photoEl.onerror = () => { photoEl.src = 'images/default.jpeg'; };
-
+        
             // Відкриваємо вікно
             modal.showModal();
         }
