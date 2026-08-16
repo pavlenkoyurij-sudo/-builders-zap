@@ -11,6 +11,7 @@
             const { data, error } = await supabaseClient
                 .from("carriers")
                 .select("*")
+                .eq("city", "Запоріжжя")    
                 .eq("approved", true);
             if (error) {
                 console.error(error);
