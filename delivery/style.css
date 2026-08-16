@@ -954,6 +954,54 @@ header nav a[href^="mailto:"]:hover {
     
     }
 
+    .city-dropdown {/* Контейнер для випадаючого списку міст */
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        margin: 20px auto;
+    }
+
+    #citySearch {
+        width: 100%;
+        padding: 13px 18px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        font-size: 16px;
+        background: white;
+        cursor: pointer;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .city-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 5px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .city-dropdown:focus-within .city-list {
+        display: block;
+    }
+
+    .city-list a {
+        display: block;
+        padding: 12px 18px;
+        color: #2c2c2c;
+        text-decoration: none;
+    }
+
+    .city-list a:hover {
+        background: #ff6600;
+        color: white;
+    }
+
 
 
 
