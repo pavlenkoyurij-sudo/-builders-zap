@@ -74,8 +74,7 @@
             "furniture-assembler": "Корпусні меблі",
             "conditioner-installer": "Монтаж кондиціонерів",
             cleaning: "Прибирання",
-            worker: "Вантажники",
-            trucker: "Перевізники"
+            worker: "Вантажники"
         };
 
         function renderMasters() {
