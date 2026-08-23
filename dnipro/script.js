@@ -71,7 +71,7 @@
             "roof-installer": "Монтаж покрівлі",
             "exterior-worker": "Фасадні роботи",
             "landscaping-services": "Благоустрій території",
-            "furniture-assembler": "Корпусні меблі",
+            "furniture-assembler": "Збирання та ремонт меблів",
             "conditioner-installer": "Монтаж кондиціонерів",
             cleaning: "Прибирання",
             worker: "Вантажники"
