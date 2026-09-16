@@ -189,9 +189,11 @@
             const categoryTitle = categoryNames[master.category] || master.profession || master.category;
 
             // Заповнюємо дані в модалці
-            document.getElementById("modalName").textContent = master.name;
-            document.getElementById("modalProfession").textContent = "🛠️ " + categoryTitle; // 👈 Вже не буде undefined!
-            document.getElementById("modalCity").textContent = "📍 " + master.city;
+            document.getElementById("modalId").textContent = "🆔 " + master.id;
+            document.getElementById("modalName").textContent = "👤 Ім'я: " + master.name;            
+            document.getElementById("modalProfession").textContent = "🛠️ Спеціалізація: " + categoryTitle; // 👈 Вже не буде undefined!
+            document.getElementById("modalExperience").textContent = "🏆 Досвід: " + master.experience + " років";
+            document.getElementById("modalCity").textContent = "📍 Місто: " + master.city;
             document.getElementById("modalDescription").textContent = master.description || "Опис відсутній.";
             document.getElementById("modalCallBtn").href = "tel:" + master.phone;
             
