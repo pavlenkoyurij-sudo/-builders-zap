@@ -1,3 +1,8 @@
+        // Функція для екранування, захист від XSS атак
+        const esc = s => String(s ?? '').replace(/[&<>"']/g,
+            c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+       
+
         const supabaseUrl = "https://kvnivreuwjgxqekaswed.supabase.co";
         const supabaseKey = "sb_publishable_lFliydUt3DSoAuntl79FdA_zHUVZpga";
 
@@ -11,7 +16,7 @@
             const { data, error } = await supabaseClient
                 .from("masters")
                 .select("*")
-                 .eq("city", "Запоріжжя")   
+                .eq("city", "Запоріжжя")
                 .eq("approved", true);
             if (error) {
                 console.error(error);
@@ -71,10 +76,11 @@
             "roof-installer": "Монтаж покрівлі",
             "exterior-worker": "Фасадні роботи",
             "landscaping-services": "Благоустрій території",
-            "furniture-assembler": "Збирання та ремонт меблів",
+            "furniture-assembler": "Меблі",
             "conditioner-installer": "Монтаж кондиціонерів",
             cleaning: "Прибирання",
-            worker: "Вантажники"
+            worker: "Вантажники",
+            
         };
 
         function renderMasters() {
@@ -82,32 +88,33 @@
             masterGrid.innerHTML = "";
 
             masters.forEach(master => {
+                
 
                 masterGrid.innerHTML += `
                     <div class="master-card"
-                        data-category="${master.category}"
+                        data-category="${esc(master.category)}"
                         onclick="openMasterModal(${master.id})">
-                        <img src="${master.photo}"
-                            alt="${master.name}"
-                            onerror="this.onerror=null; this.src='images/default.jpeg';"> 
+
+                        <img src="${esc(master.photo) || 'images/default.jpeg'}"
+                            alt="${esc(master.name)}">
                             
-                        <h3>${master.name}</h3>
+                        <h3>${esc(master.name)}</h3>
 
                         <p>🛠️${categoryNames[master.category] || master.category}</p>
-                        <p class="master-description">📜${master.description || 'Надання професійних послуг в нашому місті'}</p>
+                        <p class="master-description">📜${esc(master.description) || 'Надання професійних послуг в нашому місті'}</p>
 
                         <p>⭐${master.rating}
                         (${master.reviews} відгуків)
                         </p>
 
                         <p>
-                            🏆${master.experience} років досвіду
+                            🏆${esc(master.experience)} років досвіду
                         </p>
 
-                        <p>📍${master.city}</p>
+                        <p>📍${esc(master.city)}</p>
                             
                         <a class="call-btn"
-                            href="tel:${master.phone}"
+                            href="tel:${esc(master.phone)}"
                             onclick="event.stopPropagation()">
                             📞Подзвонити
                         </a>
@@ -116,9 +123,9 @@
                          ⭐ В обране
                         </button>
                         
-                        ${master.isPremium ? `
+                        ${master.isPremium && master.page ? `
                         <a class="premium-btn"
-                        href="${master.page}">
+                        href="${esc(master.page)}">
                         Детальніше:
                          </a>
                         ` : ""}
@@ -141,7 +148,7 @@
         
         
 
-               //Функція додавання та видалення майстрів з фаворитів
+                //Функція додавання та видалення майстрів з фаворитів
         function toggleFavorite(event, masterId) {
             // Зупиняємо вспливання події, щоб не відкривалася модалка
             event.stopPropagation();
@@ -182,10 +189,10 @@
             // Знаходимо майстра в масиві за id
             const master = masters.find(m => m.id === id);
             if (!master) return;
-        
+
             // Отримуємо зрозумілу назву категорії зі словника categoryNames
             const categoryTitle = categoryNames[master.category] || master.profession || master.category;
-        
+
             // Заповнюємо дані в модалці
             document.getElementById("modalId").textContent = "🆔 " + master.id;
             document.getElementById("modalName").textContent = "👤 Ім'я: " + master.name;            
@@ -198,7 +205,7 @@
             const photoEl = document.getElementById("modalPhoto");
             photoEl.src = master.photo || 'images/default.jpeg';
             photoEl.onerror = () => { photoEl.src = 'images/default.jpeg'; };
-        
+
             // Відкриваємо вікно
             modal.showModal();
         }
