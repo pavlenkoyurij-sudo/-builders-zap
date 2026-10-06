@@ -24,7 +24,11 @@
             }
             masters = data;
             //Функція сортування майстрів по рейтингу
-            masters.sort((a, b) => b.rating - a.rating);
+            // було: masters.sort((a, b) => b.rating - a.rating);
+            masters.sort((a, b) =>// сортування преміум карток
+                (Number(!!b.isPremium) - Number(!!a.isPremium)) ||
+                (b.rating - a.rating)
+            );
 
             renderMasters();
 
@@ -82,6 +86,10 @@
             worker: "Вантажники",
             
         };
+            
+
+
+
 
         function renderMasters() {
 
@@ -91,14 +99,17 @@
                 
 
                 masterGrid.innerHTML += `
-                    <div class="master-card"
+                    <div class="master-card ${master.isPremium ? 'premium' : ''}"
                         data-category="${esc(master.category)}"
                         onclick="openMasterModal(${master.id})">
 
                         <img src="${esc(master.photo) || 'images/default.jpeg'}"
                             alt="${esc(master.name)}">
-                            
-                        <h3>${esc(master.name)}</h3>
+
+                        <div class="master-name-row">    
+                            <h3>${esc(master.name)}</h3>
+                            ${master.isPremium ? `<span class="badge-recommended"> TOP</span>` : ""}
+                        </div>
 
                         <p>🛠️${categoryNames[master.category] || master.category}</p>
                         <p class="master-description">📜${esc(master.description) || 'Надання професійних послуг в нашому місті'}</p>
@@ -125,8 +136,9 @@
                         
                         ${master.isPremium && master.page ? `
                         <a class="premium-btn"
-                        href="${esc(master.page)}">
-                        Детальніше:
+                        href="${esc(master.page)}"
+                        onclick="event.stopPropagation()">
+                        Детальніше
                          </a>
                         ` : ""}
                         
@@ -139,10 +151,6 @@
             renderFavorites();
         }
       
-        //onerror="this.onerror=null; this.src='images/default.jpeg';" - це атрибут зображення, який забезпечує заміну зображення на "images/default.jpeg" у випадку помилки завантаження (наприклад, якщо вказане зображення не існує або недоступне). Це дозволяє уникнути відображення порожнього місця або помилки замість зображення майстра.
-
-
-
 
         loadMasters(); //рендерить список майстрів -const masterGrid = document.getElementById("masterGrid");
         
