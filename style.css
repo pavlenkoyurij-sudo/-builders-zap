@@ -1108,6 +1108,48 @@ header nav a[href^="mailto:"]:hover {
         transform: translateY(-1px);
     } 
 
+    /*--- стилі блоку корисні сервіси ---*/
+
+         /*--- головна секція: центруємо тект, додаємо відступи ---*/
+    .other-services-section {
+        margin-top: 40px;
+        padding: 50px 20px;
+        text-align: center;
+        background-color: rgba(255,255,255,0.65);
+        backdrop-filter: blur(1px);
+
+    }
+
+    /*--- контейнен(флекс-бокс) ---*/
+    .other-services-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto 40px;
+    }
+
+      /*--- сама картка відгуку ---*/
+    .other-service-card {
+        background-color: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 16px;
+        padding: 20px;
+        flex: 1 1 300px; /* Дозволяє карткам рости і зменшуватися, але не менше 300px */
+        width: 100%;
+        max-width: 450px;
+        text-align: left;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .other-service-btn {
+        text-decoration: none;
+    }
+
 
 
 
